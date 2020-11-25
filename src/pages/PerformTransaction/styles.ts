@@ -59,6 +59,15 @@ export const Form = styled.form`
     }
   }
 
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
   button {
     display: block;
     width: 180px;

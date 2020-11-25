@@ -34,7 +34,7 @@ const PerformTransaction: React.FC = () => {
 
   const [title, setTitle] = useState('');
   const [type, setType] = useState('');
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<number>();
   const [category, setCategory] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
