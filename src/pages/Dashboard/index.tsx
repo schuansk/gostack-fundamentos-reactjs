@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
     <>
       <Header page="listing" />
       <Container>
-        <InfoCard balance={balance} transactions={transactions.length} />
+        <InfoCard balance={balance} transactions={transactions} />
 
         {transactions.length ? (
           <TableContainer>

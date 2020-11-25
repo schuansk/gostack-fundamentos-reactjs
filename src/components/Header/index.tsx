@@ -25,6 +25,12 @@ const Header: React.FC<HeaderProps> = ({
         <Link to="/import" className={page === 'import' ? 'selected' : ''}>
           Importar
         </Link>
+        <Link
+          to="/perform-transaction"
+          className={page === 'perform-transaction' ? 'selected' : ''}
+        >
+          Transação
+        </Link>
       </nav>
     </header>
   </Container>
