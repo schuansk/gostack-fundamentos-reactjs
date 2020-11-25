@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import income from '../../assets/income.svg';
-import outcome from '../../assets/outcome.svg';
-import total from '../../assets/total.svg';
 
 import api from '../../services/api';
 
 import Header from '../../components/Header';
 
-import { TableLoader, ValueLoader } from '../../components/Loaders';
+import { TableLoader } from '../../components/Loaders';
+
+import InfoCard from '../../components/InfoCard';
 
 import formatValue from '../../utils/formatValue';
 
-import { Container, CardContainer, Card, TableContainer } from './styles';
+import { Container, TableContainer } from './styles';
 
 interface Transaction {
   id: string;
@@ -70,35 +69,7 @@ const Dashboard: React.FC = () => {
     <>
       <Header page="listing" />
       <Container>
-        <CardContainer>
-          <Card>
-            <header>
-              <p>Entradas</p>
-              <img src={income} alt="Income" />
-            </header>
-            <h1 data-testid="balance-income">
-              {transactions.length ? balance.income : <ValueLoader />}
-            </h1>
-          </Card>
-          <Card>
-            <header>
-              <p>Saídas</p>
-              <img src={outcome} alt="Outcome" />
-            </header>
-            <h1 data-testid="balance-outcome">
-              {transactions.length ? balance.outcome : <ValueLoader />}
-            </h1>
-          </Card>
-          <Card total>
-            <header>
-              <p>Total</p>
-              <img src={total} alt="Total" />
-            </header>
-            <h1 data-testid="balance-total">
-              {transactions.length ? balance.total : <ValueLoader />}
-            </h1>
-          </Card>
-        </CardContainer>
+        <InfoCard balance={balance} transactions={transactions.length} />
 
         {transactions.length ? (
           <TableContainer>
